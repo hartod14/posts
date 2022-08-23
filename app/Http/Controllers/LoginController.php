@@ -19,14 +19,14 @@ class LoginController extends Controller
 
     public function authenticate(StoreLoginRequest $request)
     {
-        $credentials = $request->validated();
+        $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/')->with('success', 'Login Success');
         }
 
-        return back()->with('error', 'Login Failed');
+        return redirect()->intended('/login')->with('error', 'Wrong Email or Password');
     }
 
     public function logout(Request $request)

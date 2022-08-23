@@ -6,9 +6,9 @@
             @csrf
             <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
             <div class="form-floating">
-                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
-                    id="email" placeholder="email" autofocus required value="{{ old('email') }} ">
-                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                    placeholder="email" autofocus required value="{{ old('email') }}">
+                <label for="email">Email adress</label>
                 @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
