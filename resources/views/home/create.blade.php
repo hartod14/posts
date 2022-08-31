@@ -8,7 +8,6 @@
                     <label for="body" class="form-label">Create Post</label>
                     <textarea type="text" name="body" class="form-control  @error('body') is-invalid @enderror" id="body"
                         rows="3" placeholder="update your post here..."></textarea>
-                    {{-- @auth <input type="hidden" name="user_id" value="{{ auth()->user()->id }}"> @endauth --}}
                 </div>
                 <button type="submit" class="btn btn-primary">Create Post</button>
                 @error('body')

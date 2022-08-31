@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function viewLogin()
     {
-        return view('login', [
+        return view('login.login', [
             'title' => 'Login'
         ]);
     }

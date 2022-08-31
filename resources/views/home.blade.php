@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @include('navbar')
+    @include('partial.navbar')
     @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}

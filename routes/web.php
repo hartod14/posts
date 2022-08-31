@@ -17,16 +17,17 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index']);
-Route::post('/', [PostController::class, 'store'])->middleware(['auth', 'isUser']);
-Route::post('comment', [CommentController::class, 'store'])->name('comment.store')->middleware(['auth', 'isUser']);
+Route::get('/register', [RegisterController::class, 'viewRegister'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'proccessRegister']);
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'viewLogin'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/', [PostController::class, 'index']);
+Route::post('/', [PostController::class, 'addPost'])->middleware(['auth', 'isUser']);
+
+Route::post('/comment', [CommentController::class, 'addComment'])->name('comment.add')->middleware(['auth', 'isUser']);
 
 Route::get('/banned', function () {
     return view('banned');

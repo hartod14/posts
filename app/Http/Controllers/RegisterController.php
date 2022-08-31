@@ -11,14 +11,14 @@ use Throwable;
 
 class RegisterController extends Controller
 {
-    public function index()
+    public function viewRegister()
     {
-        return view('register', [
+        return view('login.register', [
             'title' => "Register"
         ]);
     }
 
-    public function store(StoreRegisterRequest $request)
+    public function proccessRegister(StoreRegisterRequest $request)
     {
         User::create([
             'name' => $request->name,
@@ -26,6 +26,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('/login')->with('success', 'Register has been completed! Please Login');
+        return redirect('/login')->with('success', 'Register has been completed. Please Login !');
     }
 }
