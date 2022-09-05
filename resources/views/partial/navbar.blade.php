@@ -17,7 +17,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">My Profile</a>
+                                <a class="dropdown-item" href="/profile">My Profile</a>
                             </li>
                             <hr class="dropdown-divider">
                             <form action="/logout" method="POST">

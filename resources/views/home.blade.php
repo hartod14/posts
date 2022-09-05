@@ -9,8 +9,8 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/trix.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/trix.js"></script>
-    <title>Home</title>
+    {{-- <script type="text/javascript" src="/js/trix.js"></script> --}}
+    <title>HaybooK!</title>
 </head>
 
 <body>

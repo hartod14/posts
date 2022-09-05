@@ -8,7 +8,7 @@
             <div class="container">
                 @foreach ($posts as $post)
                     <div class="row justify-content-center">
-                        <div class="col-md-8 mb-5">
+                        <div class="col-sm-8 mb-5">
                             <div class="card">
                                 <div class="card-body pt-4 pb-0 px-4">
                                     <small class="d-flex justify-content-between align-items-center mb-3">
@@ -17,7 +17,7 @@
                                                 style="object-fit:cover" width="40px" height="40px">
                                             <h5 class="mb-0 ms-2">
                                                 @if ($post->user->status == 'admin')
-                                                    <span class="badge text-bg-primary">Admin</span>
+                                                    <span class="badge text-bg-info">Admin</span>
                                                 @endif
                                                 {{ $post->user->name }}
                                             </h5>
@@ -28,7 +28,6 @@
                                     </small>
                                     <p class="card-text">{{ $post->body }}</p>
                                 </div>
-                                @include('home.create-comment')
                                 @include('home.comment')
                             </div>
                         </div>

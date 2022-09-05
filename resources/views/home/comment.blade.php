@@ -1,5 +1,6 @@
-<div class="container pt-2">
-    @if ($post->comments->count() > 0)
+@if ($post->comments->count() > 0)
+    <hr style="opacity:0.1;border-top:1px solid">
+    <div class="container pt-2">
         <div class="me-4 ms-5">
             @foreach ($post->comments as $comment)
                 <div class="d-flex">
@@ -12,7 +13,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="mb-0">
                                     @if ($comment->user->status == 'admin')
-                                        <span class="badge text-bg-primary">Admin</span>
+                                        <span class="badge text-bg-info">Admin</span>
                                     @endif{{ $comment->user->name }}
                                 </h6>
                             </div>
@@ -26,6 +27,14 @@
                     </div>
                 </div>
             @endforeach
+            @include('home.create-comment')
         </div>
-    @endif
-</div>
+    </div>
+@else
+    <hr style="opacity:0.1;border-top:1px solid">
+    <div class="container pt-2">
+        <div class="me-4 ms-5">
+            @include('home.create-comment')
+        </div>
+    </div>
+@endif

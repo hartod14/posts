@@ -1,6 +1,6 @@
 <div class="row justify-content-center align-items-center">
     <form method="POST" action="{{ route('comment.add') }}" class="">
-        <div class="px-4 mb-4 mt-4">
+        <div class="mb-4 mt-3">
             @csrf
             <div class="mb-3">
                 <textarea type="text" name="body" class="form-control  @error('body') is-invalid @enderror" id="body"
@@ -18,4 +18,4 @@
         </div>
     </form>
 </div>
-<hr style="opacity:0.1;border-top:2px solid">
+

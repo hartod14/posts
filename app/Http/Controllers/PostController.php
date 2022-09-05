@@ -32,7 +32,7 @@ class PostController extends Controller
             return redirect()->back()->with('error', 'Failed To Update Post');
         }
 
-        return redirect('/')->with('success', 'New Post has been added!');
+        return redirect()->back()->with('success', 'New Post has been added!');
     }
 
 

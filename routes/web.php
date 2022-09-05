@@ -27,6 +27,12 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/', [PostController::class, 'index']);
 Route::post('/', [PostController::class, 'addPost'])->middleware(['auth', 'isUser']);
 
+Route::prefix('/profile')->middleware(['auth'])->group(function () {
+    Route::get('/', [ProfileController::class, 'index'])->name('profile.view');
+    Route::get('/setting', [ProfileController::class, 'viewProfile'])->name('profile.setting');
+    Route::post('/setting', [ProfileController::class, 'editProfile']);
+});
+
 Route::post('/comment', [CommentController::class, 'addComment'])->name('comment.add')->middleware(['auth', 'isUser']);
 
 Route::get('/banned', function () {
